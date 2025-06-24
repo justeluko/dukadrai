@@ -2,151 +2,171 @@
 <!DOCTYPE html>
 <html lang="lt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Portfolio | Du Kadrai</title>
+  
   <style>
-    body {
+    body {{
       font-family: Arial, sans-serif;
-      background: #000;
+      background-color: #000;
       color: #fff;
       margin: 0;
-      text-align: center;
-    }
-    nav {
+      padding: 0;
+    }}
+    nav {{
       background: #111;
-      padding: 10px;
-    }
-    nav a {
+      padding: 10px 0;
+      text-align: center;
+    }}
+    nav a {{
       color: white;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+    }}
+    .logo {{
+      display: block;
+      max-height: 120px;
+      margin: 20px auto 10px auto;
+    }}
+    .container {{
+      padding: 20px;
+      text-align: center;
+    }}
+    h1, h2 {{
+      margin-top: 10px;
+    }}
+  </style>
+
+  <style>
+    .selector {
+      margin-top: 20px;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .tabs {
-      margin-top: 30px;
-    }
-    .tabs button {
-      padding: 10px 20px;
+    .selector button {
       margin: 10px;
-      background: #222;
-      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
       border: none;
       cursor: pointer;
-      font-size: 16px;
+      background-color: #333;
+      color: #fff;
     }
-    .tabs button:hover {
-      background: #444;
-    }
-    .carousel {
-      max-width: 90%;
-      margin: 30px auto;
-      position: relative;
+    .selector button.active {
+      background-color: #555;
     }
     .carousel img {
-      max-height: 80vh;
-      max-width: 100%;
-      object-fit: contain;
       display: none;
     }
     .carousel img.active {
       display: block;
     }
-    .nav-buttons {
-      margin-top: 20px;
-    }
-    button.nav {
-      background-color: #222;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin: 0 10px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .counter {
-      margin-top: 10px;
-      color: #aaa;
-      font-size: 14px;
-    }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Pagrindinis</a>
-    <a href="about.html">Apie mus</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="kontaktai.html">Kontaktai</a>
-  </nav>
-  <div class="tabs">
-    <button onclick="switchGallery(0)">📸 Narsioji širdis</button>
-    <button onclick="switchGallery(1)">📷 Portfolio</button>
+  <img src="logo.jpg" alt="Du Kadrai Logo" class="logo"/>
+  
+<nav>
+  <a href="index.html">Pradžia</a>
+  <a href="about.html">Apie mus</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="kontaktai.html">Kontaktai</a>
+</nav>
+
+  <div class="container">
+    <h2>Portfolio</h2>
+    <div class="selector">
+      <button id="gallery1Btn" class="active" onclick="switchGallery('gallery1')">Knock</button>
+      <button id="gallery2Btn" onclick="switchGallery('gallery2')">Linum Lenis</button>
+    </div>
+
+    <div class="carousel" id="carousel">
+<img src="IMG_1800.JPG" class="active gallery1" alt="Knock 1">
+<img src="IMG_1801.JPG" class=" gallery1" alt="Knock 2">
+<img src="IMG_1805.JPG" class=" gallery1" alt="Knock 3">
+<img src="IMG_1806.JPG" class=" gallery1" alt="Knock 4">
+<img src="IMG_1949.JPG" class=" gallery1" alt="Knock 5">
+<img src="IMG_9650.JPG" class=" gallery1" alt="Knock 6">
+<img src="IMG_9651.JPG" class=" gallery1" alt="Knock 7">
+<img src="IMG_9652.JPG" class=" gallery1" alt="Knock 8">
+<img src="IMG_9653.JPG" class=" gallery1" alt="Knock 9">
+<img src="IMG_9654.JPG" class=" gallery1" alt="Knock 10">
+<img src="IMG_9655.JPG" class=" gallery1" alt="Knock 11">
+<img src="IMG_9656.JPG" class=" gallery1" alt="Knock 12">
+<img src="IMG_9657.JPG" class=" gallery1" alt="Knock 13">
+<img src="1 (1).jpg" class="gallery2" alt="Linum Lenis 1">
+<img src="1 (14).jpg" class="gallery2" alt="Linum Lenis 2">
+<img src="1 (15).jpg" class="gallery2" alt="Linum Lenis 3">
+<img src="1 (18).jpg" class="gallery2" alt="Linum Lenis 4">
+<img src="1 (19).jpg" class="gallery2" alt="Linum Lenis 5">
+<img src="1 (22).jpg" class="gallery2" alt="Linum Lenis 6">
+<img src="1 (24).jpg" class="gallery2" alt="Linum Lenis 7">
+<img src="1 (26).jpg" class="gallery2" alt="Linum Lenis 8">
+<img src="1 (27).jpg" class="gallery2" alt="Linum Lenis 9">
+<img src="1 (28).jpg" class="gallery2" alt="Linum Lenis 10">
+<img src="1 (29).jpg" class="gallery2" alt="Linum Lenis 11">
+<img src="1 (31).jpg" class="gallery2" alt="Linum Lenis 12">
+<img src="1 (32).jpg" class="gallery2" alt="Linum Lenis 13">
+<img src="1 (37).jpg" class="gallery2" alt="Linum Lenis 14">
+<img src="1 (39).jpg" class="gallery2" alt="Linum Lenis 15">
+<img src="1 (4).jpg" class="gallery2" alt="Linum Lenis 16">
+<img src="1 (40).jpg" class="gallery2" alt="Linum Lenis 17">
+<img src="1 (42).jpg" class="gallery2" alt="Linum Lenis 18">
+<img src="1 (45).jpg" class="gallery2" alt="Linum Lenis 19">
+<img src="1 (46).jpg" class="gallery2" alt="Linum Lenis 20">
+<img src="1 (47).jpg" class="gallery2" alt="Linum Lenis 21">
+<img src="1 (48).jpg" class="gallery2" alt="Linum Lenis 22">
+<img src="1 (49).jpg" class="gallery2" alt="Linum Lenis 23">
+<img src="1 (50).jpg" class="gallery2" alt="Linum Lenis 24">
+<img src="1 (51).jpg" class="gallery2" alt="Linum Lenis 25">
+<img src="1 (52).jpg" class="gallery2" alt="Linum Lenis 26">
+<img src="1 (6).jpg" class="gallery2" alt="Linum Lenis 27">
+<img src="1 (9).jpg" class="gallery2" alt="Linum Lenis 28">
+
+    </div>
+    <div class="nav-buttons">
+      <button onclick="prevImage()">← Ankstesnė</button>
+      <button onclick="nextImage()">Kita →</button>
+    </div>
+    <div class="counter" id="counter">1 / 13</div>
   </div>
 
-  <div id="gallery" class="carousel"></div>
-  <div class="nav-buttons">
-    <button class="nav" onclick="prevImage()">← Ankstesnė</button>
-    <button class="nav" onclick="nextImage()">Kita →</button>
-  </div>
-  <div class="counter" id="counter">1 / 0</div>
+  <script>
+    let current = 0;
+    let currentGallery = 'gallery1';
+    const allImages = document.querySelectorAll('.carousel img');
+    let images = Array.from(document.querySelectorAll('.' + currentGallery));
+    const counter = document.getElementById('counter');
 
-<script>
-const galleries = [
-  ["IMG_1800.JPG","IMG_1801.JPG","IMG_1805.JPG","IMG_1806.JPG","IMG_1949.JPG","IMG_9650.JPG","IMG_9651.JPG","IMG_9652.JPG","IMG_9653.JPG","IMG_9654.JPG","IMG_9655.JPG","IMG_9656.JPG","IMG_9657.JPG"],
-  ["1 (1).jpg","1 (14).jpg","1 (15).jpg","1 (18).jpg","1 (19).jpg","1 (22).jpg","1 (24).jpg","1 (26).jpg","1 (27).jpg","1 (28).jpg","1 (29).jpg","1 (31).jpg","1 (32).jpg","1 (37).jpg","1 (39).jpg","1 (4).jpg","1 (40).jpg","1 (42).jpg","1 (45).jpg","1 (46).jpg","1 (47).jpg","1 (48).jpg","1 (49).jpg","1 (50).jpg","1 (51).jpg","1 (52).jpg","1 (6).jpg","1 (9).jpg"]
-];
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) img.classList.add('active');
+      });
+      counter.textContent = (index + 1) + " / " + images.length;
+    }
 
-let currentGallery = 0;
-let currentIndex = 0;
+    function nextImage() {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }
 
-function renderGallery() {
-  const galleryEl = document.getElementById('gallery');
-  galleryEl.innerHTML = '';
-  galleries[currentGallery].forEach((src, i) => {
-    const img = document.createElement('img');
-    img.src = src;
-    if (i === currentIndex) img.classList.add('active');
-    galleryEl.appendChild(img);
-  });
-  updateCounter();
-}
+    function prevImage() {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    }
 
-function switchGallery(index) {
-  currentGallery = index;
-  currentIndex = 0;
-  renderGallery();
-}
+    function switchGallery(galleryClass) {
+      document.getElementById('gallery1Btn').classList.remove('active');
+      document.getElementById('gallery2Btn').classList.remove('active');
+      document.getElementById(galleryClass + 'Btn').classList.add('active');
+      allImages.forEach(img => img.classList.remove('active'));
+      images = Array.from(document.querySelectorAll('.' + galleryClass));
+      currentGallery = galleryClass;
+      current = 0;
+      showImage(current);
+    }
 
-function showImage(index) {
-  const imgs = document.querySelectorAll('#gallery img');
-  imgs.forEach((img, i) => {
-    img.classList.remove('active');
-    if (i === index) img.classList.add('active');
-  });
-  updateCounter();
-}
-
-function nextImage() {
-  const total = galleries[currentGallery].length;
-  currentIndex = (currentIndex + 1) % total;
-  showImage(currentIndex);
-}
-
-function prevImage() {
-  const total = galleries[currentGallery].length;
-  currentIndex = (currentIndex - 1 + total) % total;
-  showImage(currentIndex);
-}
-
-function updateCounter() {
-  const total = galleries[currentGallery].length;
-  document.getElementById('counter').textContent = (currentIndex + 1) + ' / ' + total;
-}
-
-switchGallery(0);
-</script>
+    showImage(current);
+  </script>
 </body>
 </html>
