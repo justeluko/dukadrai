@@ -3,23 +3,55 @@
 <html lang="lt">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Du Kadrai | Pradžia</title>
+  
   <style>
-    body { background:#000; color:#fff; text-align:center; font-family:sans-serif; padding:40px; }
-    a { color:#fff; text-decoration:none; }
+    body {{
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }}
+    nav {{
+      background: #111;
+      padding: 10px 0;
+      text-align: center;
+    }}
+    nav a {{
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }}
+    .logo {{
+      display: block;
+      max-height: 120px;
+      margin: 20px auto 10px auto;
+    }}
+    .container {{
+      padding: 20px;
+      text-align: center;
+    }}
+    h1, h2 {{
+      margin-top: 10px;
+    }}
   </style>
+
 </head>
 <body>
+  <img src="logo.jpg" alt="Du Kadrai Logo" class="logo"/>
   
-  <nav style="background:#111;padding:10px 0;">
-    <a href="index.html" style="color:white;margin:0 15px;text-decoration:none;">Pradžia</a>
-    <a href="about.html" style="color:white;margin:0 15px;text-decoration:none;">Apie mus</a>
-    <a href="portfolio.html" style="color:white;margin:0 15px;text-decoration:none;">Portfolio</a>
-    <a href="kontaktai.html" style="color:white;margin:0 15px;text-decoration:none;">Kontaktai</a>
-  </nav>
+<nav>
+  <a href="index.html">Pradžia</a>
+  <a href="about.html">Apie mus</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="kontaktai.html">Kontaktai</a>
+</nav>
 
-  <h1>Du Kadrai</h1>
-  <p>Jausmas, kuris lieka – tai mūsų darbas.</p>
+  <div class="container">
+    <h1>Du Kadrai</h1>
+    <p>Jausmas, kuris lieka – tai mūsų darbas.</p>
+  </div>
 </body>
 </html>

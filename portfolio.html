@@ -11,16 +11,35 @@
       background: #000;
       color: #fff;
       margin: 0;
-      padding: 0;
       text-align: center;
     }
-    h2 {
-      margin-top: 2rem;
+    nav {
+      background: #111;
+      padding: 10px;
     }
-    .caption {
-      font-style: italic;
-      color: #ccc;
-      margin-bottom: 1rem;
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .tabs {
+      margin-top: 30px;
+    }
+    .tabs button {
+      padding: 10px 20px;
+      margin: 10px;
+      background: #222;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .tabs button:hover {
+      background: #444;
     }
     .carousel {
       max-width: 90%;
@@ -37,9 +56,9 @@
       display: block;
     }
     .nav-buttons {
-      margin: 20px 0;
+      margin-top: 20px;
     }
-    button {
+    button.nav {
       background-color: #222;
       color: white;
       border: none;
@@ -47,9 +66,6 @@
       margin: 0 10px;
       font-size: 16px;
       cursor: pointer;
-    }
-    button:hover {
-      background-color: #444;
     }
     .counter {
       margin-top: 10px;
@@ -59,79 +75,78 @@
   </style>
 </head>
 <body>
-  <nav style="background:#111;padding:10px 0;">
-    <a href="index.html" style="color:white;margin:0 15px;text-decoration:none;">Pradžia</a>
-    <a href="about.html" style="color:white;margin:0 15px;text-decoration:none;">Apie mus</a>
-    <a href="portfolio.html" style="color:white;margin:0 15px;text-decoration:none;">Portfolio</a>
-    <a href="kontaktai.html" style="color:white;margin:0 15px;text-decoration:none;">Kontaktai</a>
+  <nav>
+    <a href="index.html">Pagrindinis</a>
+    <a href="about.html">Apie mus</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="kontaktai.html">Kontaktai</a>
   </nav>
-
-
-  <h2>Portfolio</h2>
-  <p class="caption">Different games. Same fire.<br>Whether it's the cage or the pitch – we move with purpose.</p>
-
-  <div class="carousel" id="carousel">
-    <img src="1 (1).jpg" class="active" alt="Photo 1">
-<img src="1 (14).jpg" class="" alt="Photo 2">
-<img src="1 (15).jpg" class="" alt="Photo 3">
-<img src="1 (18).jpg" class="" alt="Photo 4">
-<img src="1 (19).jpg" class="" alt="Photo 5">
-<img src="1 (22).jpg" class="" alt="Photo 6">
-<img src="1 (24).jpg" class="" alt="Photo 7">
-<img src="1 (26).jpg" class="" alt="Photo 8">
-<img src="1 (27).jpg" class="" alt="Photo 9">
-<img src="1 (28).jpg" class="" alt="Photo 10">
-<img src="1 (29).jpg" class="" alt="Photo 11">
-<img src="1 (31).jpg" class="" alt="Photo 12">
-<img src="1 (32).jpg" class="" alt="Photo 13">
-<img src="1 (37).jpg" class="" alt="Photo 14">
-<img src="1 (39).jpg" class="" alt="Photo 15">
-<img src="1 (4).jpg" class="" alt="Photo 16">
-<img src="1 (40).jpg" class="" alt="Photo 17">
-<img src="1 (42).jpg" class="" alt="Photo 18">
-<img src="1 (45).jpg" class="" alt="Photo 19">
-<img src="1 (46).jpg" class="" alt="Photo 20">
-<img src="1 (47).jpg" class="" alt="Photo 21">
-<img src="1 (48).jpg" class="" alt="Photo 22">
-<img src="1 (49).jpg" class="" alt="Photo 23">
-<img src="1 (50).jpg" class="" alt="Photo 24">
-<img src="1 (51).jpg" class="" alt="Photo 25">
-<img src="1 (52).jpg" class="" alt="Photo 26">
-<img src="1 (6).jpg" class="" alt="Photo 27">
-<img src="1 (9).jpg" class="" alt="Photo 28">
-
+  <div class="tabs">
+    <button onclick="switchGallery(0)">📸 Narsioji širdis</button>
+    <button onclick="switchGallery(1)">📷 Portfolio</button>
   </div>
+
+  <div id="gallery" class="carousel"></div>
   <div class="nav-buttons">
-    <button onclick="prevImage()">← Ankstesnė</button>
-    <button onclick="nextImage()">Kita →</button>
+    <button class="nav" onclick="prevImage()">← Ankstesnė</button>
+    <button class="nav" onclick="nextImage()">Kita →</button>
   </div>
-  <div class="counter" id="counter">1 / 28</div>
+  <div class="counter" id="counter">1 / 0</div>
 
-  <script>
-    let current = 0;
-    const images = document.querySelectorAll('.carousel img');
-    const counter = document.getElementById('counter');
-    const total = images.length;
+<script>
+const galleries = [
+  ["IMG_1800.JPG","IMG_1801.JPG","IMG_1805.JPG","IMG_1806.JPG","IMG_1949.JPG","IMG_9650.JPG","IMG_9651.JPG","IMG_9652.JPG","IMG_9653.JPG","IMG_9654.JPG","IMG_9655.JPG","IMG_9656.JPG","IMG_9657.JPG"],
+  ["1 (1).jpg","1 (14).jpg","1 (15).jpg","1 (18).jpg","1 (19).jpg","1 (22).jpg","1 (24).jpg","1 (26).jpg","1 (27).jpg","1 (28).jpg","1 (29).jpg","1 (31).jpg","1 (32).jpg","1 (37).jpg","1 (39).jpg","1 (4).jpg","1 (40).jpg","1 (42).jpg","1 (45).jpg","1 (46).jpg","1 (47).jpg","1 (48).jpg","1 (49).jpg","1 (50).jpg","1 (51).jpg","1 (52).jpg","1 (6).jpg","1 (9).jpg"]
+];
 
-    function showImage(index) {
-      images.forEach((img, i) => {
-        img.classList.remove('active');
-        if (i === index) img.classList.add('active');
-      });
-      counter.textContent = (index + 1) + " / " + total;
-    }
+let currentGallery = 0;
+let currentIndex = 0;
 
-    function nextImage() {
-      current = (current + 1) % images.length;
-      showImage(current);
-    }
+function renderGallery() {
+  const galleryEl = document.getElementById('gallery');
+  galleryEl.innerHTML = '';
+  galleries[currentGallery].forEach((src, i) => {
+    const img = document.createElement('img');
+    img.src = src;
+    if (i === currentIndex) img.classList.add('active');
+    galleryEl.appendChild(img);
+  });
+  updateCounter();
+}
 
-    function prevImage() {
-      current = (current - 1 + images.length) % images.length;
-      showImage(current);
-    }
+function switchGallery(index) {
+  currentGallery = index;
+  currentIndex = 0;
+  renderGallery();
+}
 
-    showImage(current);
-  </script>
+function showImage(index) {
+  const imgs = document.querySelectorAll('#gallery img');
+  imgs.forEach((img, i) => {
+    img.classList.remove('active');
+    if (i === index) img.classList.add('active');
+  });
+  updateCounter();
+}
+
+function nextImage() {
+  const total = galleries[currentGallery].length;
+  currentIndex = (currentIndex + 1) % total;
+  showImage(currentIndex);
+}
+
+function prevImage() {
+  const total = galleries[currentGallery].length;
+  currentIndex = (currentIndex - 1 + total) % total;
+  showImage(currentIndex);
+}
+
+function updateCounter() {
+  const total = galleries[currentGallery].length;
+  document.getElementById('counter').textContent = (currentIndex + 1) + ' / ' + total;
+}
+
+switchGallery(0);
+</script>
 </body>
 </html>
