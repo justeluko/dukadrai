@@ -1,23 +1,73 @@
+
 <!DOCTYPE html>
 <html lang="lt">
 <head>
   <meta charset="UTF-8">
-  <title>Du Kadrai – Pagrindinis</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Du Kadrai</title>
+  <style>
+    body {{
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fefefe;
+      color: #333;
+    }}
+    header {{
+      background: #000;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }}
+    nav {{
+      background: #eee;
+      padding: 1rem;
+      text-align: center;
+    }}
+    nav a {{
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }}
+    section {{
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }}
+    footer {{
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 4rem;
+    }}
+    img.logo {{
+      max-width: 200px;
+      margin-bottom: 1rem;
+    }}
+  </style>
 </head>
 <body>
   <header>
-    <img src="images/logo.jpg" alt="Du Kadrai logotipas" style="width:150px;">
-    <nav>
-      <a href="index.html">Pagrindinis</a>
-      <a href="apie.html">Apie mus</a>
-      <a href="paslaugos.html">Paslaugos</a>
-      <a href="kontaktai.html">Kontaktai</a>
-    </nav>
+    <img src="logo.jpg" alt="Du Kadrai Logo" class="logo">
+    <h1>Du Kadrai</h1>
+    <p>Fotografija ir vaizdo turinys: paslaugos, produktai, šventės ir žmonės</p>
   </header>
-  <main>
-    <h1>Sveiki atvykę į Du Kadrai!</h1>
-    <p>Mes fotografuojame jūsų augintinius su meile.</p>
-  </main>
+
+  <nav>
+    <a href="apie.html">Apie mus</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="paslaugos.html">Paslaugos</a>
+    <a href="kontaktai.html">Kontaktai</a>
+  </nav>
+
+  <section>
+    <h2>Sveiki atvykę!</h2>
+    <p>Pasirinkite skiltį viršuje, kad sužinotumėte daugiau apie mus ir mūsų darbus.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Du Kadrai</p>
+  </footer>
 </body>
 </html>
