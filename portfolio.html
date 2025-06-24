@@ -1,84 +1,100 @@
+
 <!DOCTYPE html>
-<html lang="lt">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio | Du Kadrai</title>
   <style>
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f9f9f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    background-color: #111;
-    color: #fff;
-    padding: 2rem;
-    text-align: center;
-  }
-  header img {
-    width: 120px;
-    margin-bottom: 1rem;
-  }
-  nav {
-    background-color: #333;
-    text-align: center;
-    padding: 1rem;
-  }
-  nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  section {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  }
-  footer {
-    background-color: #111;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-  }
-</style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #000;
+      color: #fff;
+      text-align: center;
+    }
+    h2 {
+      margin-top: 30px;
+    }
+    .carousel {
+      position: relative;
+      max-width: 90%;
+      margin: 40px auto;
+    }
+    .carousel img {
+      width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      display: none;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    .caption {
+      margin-top: 10px;
+      font-style: italic;
+      color: #ccc;
+    }
+    .nav-buttons {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      background: #222;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #444;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="logo.jpg" alt="Du Kadrai logotipas">
-    <h1>Du Kadrai</h1>
-    <p>Fotografija ir vaizdo turinys</p>
-  </header>
-  <nav>
-    <a href="index.html">Pradžia</a>
-    <a href="apie.html">Apie</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="paslaugos.html">Paslaugos</a>
-    <a href="kontaktai.html">Kontaktai</a>
-  </nav>
-  <section>
-    
   <h2>Portfolio</h2>
-  <p>Vienas iš mūsų Reels iš Instagram:</p>
+  <p class="caption">Different games. Same fire.<br>Whether it's the cage or the pitch – we move with purpose.</p>
+  <div class="carousel" id="carousel">
+    <img src="IMG_1800.JPG" class="active" alt="Photo 1"/>
+    <img src="IMG_1801.JPG" class="" alt="Photo 2"/>
+    <img src="IMG_1805.JPG" class="" alt="Photo 3"/>
+    <img src="IMG_1806.JPG" class="" alt="Photo 4"/>
+    <img src="IMG_1949.JPG" class="" alt="Photo 5"/>
+    <img src="IMG_9650.JPG" class="" alt="Photo 6"/>
+    <img src="IMG_9651.JPG" class="" alt="Photo 7"/>
+    <img src="IMG_9652.JPG" class="" alt="Photo 8"/>
+    <img src="IMG_9653.JPG" class="" alt="Photo 9"/>
+    <img src="IMG_9654.JPG" class="" alt="Photo 10"/>
+    <img src="IMG_9655.JPG" class="" alt="Photo 11"/>
+    <img src="IMG_9656.JPG" class="" alt="Photo 12"/>
+    <img src="IMG_9657.JPG" class="" alt="Photo 13"/>
 
-  <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DK150LOMMDM/" data-instgrm-version="14">
-    <a href="https://www.instagram.com/p/DK150LOMMDM/" target="_blank" rel="noopener">Peržiūrėti Instagram poste</a>
-  </blockquote>
-  <script async src="//www.instagram.com/embed.js"></script>
+  </div>
+  <div class="nav-buttons">
+    <button onclick="prevImage()">← Ankstesnė</button>
+    <button onclick="nextImage()">Kita →</button>
+  </div>
 
+  <script>
+    let current = 0;
+    const images = document.querySelectorAll('.carousel img');
 
-  </section>
-  <footer>
-    &copy; 2025 Du Kadrai. Visos teisės saugomos.
-  </footer>
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) img.classList.add('active');
+      });
+    }
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }
+
+    function prevImage() {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    }
+  </script>
 </body>
 </html>
-
-
