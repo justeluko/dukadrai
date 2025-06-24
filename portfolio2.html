@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio 2 | Du Kadrai</title>
+  <style>
+    body {{
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #000;
+      color: #fff;
+      text-align: center;
+    }}
+    h2 {{
+      margin-top: 30px;
+    }}
+    .carousel {{
+      position: relative;
+      max-width: 90%;
+      margin: 40px auto;
+    }}
+    .carousel img {{
+      width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      display: none;
+    }}
+    .carousel img.active {{
+      display: block;
+    }}
+    .caption {{
+      margin-top: 10px;
+      font-style: italic;
+      color: #ccc;
+    }}
+    .nav-buttons {{
+      margin-top: 20px;
+    }}
+    button {{
+      padding: 10px 20px;
+      margin: 0 10px;
+      background: #222;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }}
+    button:hover {{
+      background: #444;
+    }}
+  </style>
+</head>
+<body>
+  <h2>Portfolio 2</h2>
+  <p class="caption">Different games. Same fire.<br>Whether it's the cage or the pitch – we move with purpose.</p>
+
+  <!-- Instagram Reels Embed -->
+  <div style="margin: 40px auto; max-width: 400px;">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DK150LOMMDM/" data-instgrm-version="14" style="background:#FFF; border:0; margin:0 auto; padding:0; width:100%;" >
+      <a href="https://www.instagram.com/p/DK150LOMMDM/" target="_blank">Peržiūrėti Reels</a>
+    </blockquote>
+    <script async src="//www.instagram.com/embed.js"></script>
+  </div>
+
+  <div class="carousel" id="carousel">
+    <img src="1 (1).jpg" class="active" alt="Photo 1">
+    <img src="1 (14).jpg" class="" alt="Photo 2">
+    <img src="1 (15).jpg" class="" alt="Photo 3">
+    <img src="1 (18).jpg" class="" alt="Photo 4">
+    <img src="1 (19).jpg" class="" alt="Photo 5">
+    <img src="1 (22).jpg" class="" alt="Photo 6">
+    <img src="1 (24).jpg" class="" alt="Photo 7">
+    <img src="1 (26).jpg" class="" alt="Photo 8">
+    <img src="1 (27).jpg" class="" alt="Photo 9">
+    <img src="1 (28).jpg" class="" alt="Photo 10">
+    <img src="1 (29).jpg" class="" alt="Photo 11">
+    <img src="1 (31).jpg" class="" alt="Photo 12">
+    <img src="1 (32).jpg" class="" alt="Photo 13">
+    <img src="1 (37).jpg" class="" alt="Photo 14">
+    <img src="1 (39).jpg" class="" alt="Photo 15">
+    <img src="1 (4).jpg" class="" alt="Photo 16">
+    <img src="1 (40).jpg" class="" alt="Photo 17">
+    <img src="1 (42).jpg" class="" alt="Photo 18">
+    <img src="1 (45).jpg" class="" alt="Photo 19">
+    <img src="1 (46).jpg" class="" alt="Photo 20">
+    <img src="1 (47).jpg" class="" alt="Photo 21">
+    <img src="1 (48).jpg" class="" alt="Photo 22">
+    <img src="1 (49).jpg" class="" alt="Photo 23">
+    <img src="1 (50).jpg" class="" alt="Photo 24">
+    <img src="1 (51).jpg" class="" alt="Photo 25">
+    <img src="1 (52).jpg" class="" alt="Photo 26">
+    <img src="1 (6).jpg" class="" alt="Photo 27">
+    <img src="1 (9).jpg" class="" alt="Photo 28">
+
+  </div>
+  <div class="nav-buttons">
+    <button onclick="prevImage()">← Ankstesnė</button>
+    <button onclick="nextImage()">Kita →</button>
+  </div>
+
+  <div class="page-nav" style="margin: 40px 0;">
+    <a href="portfolio1.html" style="color: white; margin-right: 20px;">« 1</a>
+    <a href="portfolio2.html" style="color: white;">2 »</a>
+  </div>
+
+  <script>
+    let current = 0;
+    const images = document.querySelectorAll('.carousel img');
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) img.classList.add('active');
+      });
+    }
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }
+
+    function prevImage() {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    }
+  </script>
+</body>
+</html>
