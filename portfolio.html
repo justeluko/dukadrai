@@ -63,7 +63,7 @@
     }
     .carousel {
       max-width: 800px;
-      margin: 30px auto;
+      margin: 20px auto;
     }
     .carousel img {
       max-height: 70vh;
@@ -97,6 +97,14 @@
       color: #aaa;
       font-size: 14px;
     }
+    .reels {
+      margin: 40px auto;
+      max-width: 400px;
+      display: none;
+    }
+    .reels.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -115,6 +123,15 @@
       <button id="gallery1Btn" class="active" onclick="switchGallery('gallery1')">Knock</button>
       <button id="gallery2Btn" onclick="switchGallery('gallery2')">Linum Lenis</button>
     </div>
+
+    <!-- Reels containers -->
+    <div class="reels active" id="reels1">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DK150LOMMDM/" data-instgrm-version="14" style="background:#FFF; border:0; margin:0 auto; padding:0; width:100%;"></blockquote>
+    </div>
+    <div class="reels" id="reels2">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIvF4SXtkxS/" data-instgrm-version="14" style="background:#FFF; border:0; margin:0 auto; padding:0; width:100%;"></blockquote>
+    </div>
+    <script async src="//www.instagram.com/embed.js"></script>
 
     <div class="carousel" id="carousel">
 <img src="IMG_1800.JPG" class="active gallery1" alt="Knock 1">
@@ -173,6 +190,8 @@
     const allImages = document.querySelectorAll('.carousel img');
     let images = Array.from(document.querySelectorAll('.' + currentGallery));
     const counter = document.getElementById('counter');
+    const reels1 = document.getElementById('reels1');
+    const reels2 = document.getElementById('reels2');
 
     function showImage(index) {
       images.forEach((img, i) => {
@@ -201,6 +220,12 @@
       currentGallery = galleryClass;
       current = 0;
       showImage(current);
+
+      // Reels toggle
+      reels1.classList.remove('active');
+      reels2.classList.remove('active');
+      if (galleryClass === 'gallery1') reels1.classList.add('active');
+      if (galleryClass === 'gallery2') reels2.classList.add('active');
     }
 
     showImage(current);
