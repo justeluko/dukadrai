@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="lt">
 <head>
@@ -44,68 +43,7 @@
     }
   </style>
 
-  <style>
-    .selector {
-      margin-top: 20px;
-    }
-    .selector button {
-      margin: 10px;
-      padding: 12px 24px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      background-color: #333;
-      color: #fff;
-      border-radius: 4px;
-    }
-    .selector button.active {
-      background-color: #666;
-    }
-    .carousel {
-      max-width: 800px;
-      margin: 20px auto;
-    }
-    .carousel img {
-      max-height: 70vh;
-      width: 100%;
-      object-fit: contain;
-      display: none;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-    }
-    .carousel img.active {
-      display: block;
-    }
-    .nav-buttons {
-      margin: 20px 0;
-    }
-    .nav-buttons button {
-      background-color: #222;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin: 0 10px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    .nav-buttons button:hover {
-      background-color: #444;
-    }
-    .counter {
-      margin-top: 10px;
-      color: #aaa;
-      font-size: 14px;
-    }
-    .reels {
-      margin: 40px auto;
-      max-width: 400px;
-      display: none;
-    }
-    .reels.active {
-      display: block;
-    }
-  </style>
+  <script async src="//www.instagram.com/embed.js"></script>
 </head>
 <body>
   <img src="logo.jpg" alt="Du Kadrai Logo" class="logo"/>
@@ -122,113 +60,17 @@
     <div class="selector">
       <button id="gallery1Btn" class="active" onclick="switchGallery('gallery1')">Knock</button>
       <button id="gallery2Btn" onclick="switchGallery('gallery2')">Linum Lenis</button>
+      <button id="gallery3Btn" onclick="switchGallery('gallery3')">Linum Lenis – Bedding</button>
     </div>
 
-    <!-- Reels containers -->
     <div class="reels active" id="reels1">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DK150LOMMDM/" data-instgrm-version="14" style="background:#FFF; border:0; margin:0 auto; padding:0; width:100%;"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DK150LOMMDM/" data-instgrm-version="14" style="background:#FFF;"></blockquote>
     </div>
     <div class="reels" id="reels2">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIvF4SXtkxS/" data-instgrm-version="14" style="background:#FFF; border:0; margin:0 auto; padding:0; width:100%;"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIvF4SXtkxS/" data-instgrm-version="14" style="background:#FFF;"></blockquote>
     </div>
-    <script async src="//www.instagram.com/embed.js"></script>
+    <div class="reels" id="reels3">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DKl2wR0M8nO/" data-instgrm-version="14" style="background:#FFF;"></blockquote>
+    </div>
 
     <div class="carousel" id="carousel">
-<img src="IMG_1800.JPG" class="active gallery1" alt="Knock 1">
-<img src="IMG_1801.JPG" class=" gallery1" alt="Knock 2">
-<img src="IMG_1805.JPG" class=" gallery1" alt="Knock 3">
-<img src="IMG_1806.JPG" class=" gallery1" alt="Knock 4">
-<img src="IMG_1949.JPG" class=" gallery1" alt="Knock 5">
-<img src="IMG_9650.JPG" class=" gallery1" alt="Knock 6">
-<img src="IMG_9651.JPG" class=" gallery1" alt="Knock 7">
-<img src="IMG_9652.JPG" class=" gallery1" alt="Knock 8">
-<img src="IMG_9653.JPG" class=" gallery1" alt="Knock 9">
-<img src="IMG_9654.JPG" class=" gallery1" alt="Knock 10">
-<img src="IMG_9655.JPG" class=" gallery1" alt="Knock 11">
-<img src="IMG_9656.JPG" class=" gallery1" alt="Knock 12">
-<img src="IMG_9657.JPG" class=" gallery1" alt="Knock 13">
-<img src="1 (1).jpg" class="gallery2" alt="Linum Lenis 1">
-<img src="1 (14).jpg" class="gallery2" alt="Linum Lenis 2">
-<img src="1 (15).jpg" class="gallery2" alt="Linum Lenis 3">
-<img src="1 (18).jpg" class="gallery2" alt="Linum Lenis 4">
-<img src="1 (19).jpg" class="gallery2" alt="Linum Lenis 5">
-<img src="1 (22).jpg" class="gallery2" alt="Linum Lenis 6">
-<img src="1 (24).jpg" class="gallery2" alt="Linum Lenis 7">
-<img src="1 (26).jpg" class="gallery2" alt="Linum Lenis 8">
-<img src="1 (27).jpg" class="gallery2" alt="Linum Lenis 9">
-<img src="1 (28).jpg" class="gallery2" alt="Linum Lenis 10">
-<img src="1 (29).jpg" class="gallery2" alt="Linum Lenis 11">
-<img src="1 (31).jpg" class="gallery2" alt="Linum Lenis 12">
-<img src="1 (32).jpg" class="gallery2" alt="Linum Lenis 13">
-<img src="1 (37).jpg" class="gallery2" alt="Linum Lenis 14">
-<img src="1 (39).jpg" class="gallery2" alt="Linum Lenis 15">
-<img src="1 (4).jpg" class="gallery2" alt="Linum Lenis 16">
-<img src="1 (40).jpg" class="gallery2" alt="Linum Lenis 17">
-<img src="1 (42).jpg" class="gallery2" alt="Linum Lenis 18">
-<img src="1 (45).jpg" class="gallery2" alt="Linum Lenis 19">
-<img src="1 (46).jpg" class="gallery2" alt="Linum Lenis 20">
-<img src="1 (47).jpg" class="gallery2" alt="Linum Lenis 21">
-<img src="1 (48).jpg" class="gallery2" alt="Linum Lenis 22">
-<img src="1 (49).jpg" class="gallery2" alt="Linum Lenis 23">
-<img src="1 (50).jpg" class="gallery2" alt="Linum Lenis 24">
-<img src="1 (51).jpg" class="gallery2" alt="Linum Lenis 25">
-<img src="1 (52).jpg" class="gallery2" alt="Linum Lenis 26">
-<img src="1 (6).jpg" class="gallery2" alt="Linum Lenis 27">
-<img src="1 (9).jpg" class="gallery2" alt="Linum Lenis 28">
-
-    </div>
-    <div class="nav-buttons">
-      <button onclick="prevImage()">← Ankstesnė</button>
-      <button onclick="nextImage()">Kita →</button>
-    </div>
-    <div class="counter" id="counter">1 / 13</div>
-  </div>
-
-  <script>
-    let current = 0;
-    let currentGallery = 'gallery1';
-    const allImages = document.querySelectorAll('.carousel img');
-    let images = Array.from(document.querySelectorAll('.' + currentGallery));
-    const counter = document.getElementById('counter');
-    const reels1 = document.getElementById('reels1');
-    const reels2 = document.getElementById('reels2');
-
-    function showImage(index) {
-      images.forEach((img, i) => {
-        img.classList.remove('active');
-        if (i === index) img.classList.add('active');
-      });
-      counter.textContent = (index + 1) + " / " + images.length;
-    }
-
-    function nextImage() {
-      current = (current + 1) % images.length;
-      showImage(current);
-    }
-
-    function prevImage() {
-      current = (current - 1 + images.length) % images.length;
-      showImage(current);
-    }
-
-    function switchGallery(galleryClass) {
-      document.getElementById('gallery1Btn').classList.remove('active');
-      document.getElementById('gallery2Btn').classList.remove('active');
-      document.getElementById(galleryClass + 'Btn').classList.add('active');
-      allImages.forEach(img => img.classList.remove('active'));
-      images = Array.from(document.querySelectorAll('.' + galleryClass));
-      currentGallery = galleryClass;
-      current = 0;
-      showImage(current);
-
-      // Reels toggle
-      reels1.classList.remove('active');
-      reels2.classList.remove('active');
-      if (galleryClass === 'gallery1') reels1.classList.add('active');
-      if (galleryClass === 'gallery2') reels2.classList.add('active');
-    }
-
-    showImage(current);
-  </script>
-</body>
-</html>
