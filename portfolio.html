@@ -11,100 +11,74 @@
       margin: 0;
       padding: 0;
     }
-
     nav {
       background: #111;
       padding: 10px 0;
       text-align: center;
     }
-
     nav a {
       color: white;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
     }
-
     .logo {
       display: block;
       max-height: 80px;
       width: auto;
       margin: 20px auto 10px auto;
     }
-
     .container {
       padding: 20px;
       max-width: 1000px;
       margin: auto;
       text-align: center;
     }
-
     h1, h2 {
       margin-top: 10px;
     }
-
     a {
       color: #ccc;
     }
-
     .selector {
       margin: 20px 0;
     }
-
     .selector button {
-      background: #222;
+      margin: 0 10px;
+      padding: 8px 16px;
       border: none;
-      padding: 10px 20px;
-      margin: 0 5px;
-      color: white;
+      background-color: #333;
+      color: #fff;
       cursor: pointer;
       font-weight: bold;
     }
-
-    .selector button.active {
-      background: #555;
+    .selector .active {
+      background-color: #555;
     }
-
-    .reels {
-      display: none;
-      margin: 20px auto;
-    }
-
-    .reels.active {
-      display: block;
-    }
-
     .carousel img {
       max-width: 100%;
       height: auto;
       display: none;
-      margin: 10px auto;
+      margin-top: 20px;
     }
-
     .nav-buttons {
       margin: 20px 0;
     }
-
     .nav-buttons button {
-      background: #333;
-      color: white;
-      border: none;
-      padding: 10px 15px;
+      padding: 8px 16px;
+      margin: 0 10px;
+      font-weight: bold;
       cursor: pointer;
-      margin: 0 5px;
     }
-
     .counter {
-      margin: 10px 0;
+      margin-top: 10px;
+      font-size: 16px;
     }
   </style>
-
-  <script async src="//www.instagram.com/embed.js"></script>
 </head>
 <body>
-
   <img src="logo.jpg" alt="Du Kadrai Logo" class="logo"/>
-
+  
   <nav>
     <a href="index.html">Pradžia</a>
     <a href="about.html">Apie mus</a>
@@ -116,4 +90,39 @@
     <h2>Portfolio</h2>
 
     <div class="selector">
-      <button id="gallery1Bt
+      <button id="gallery1Btn" class="active" onclick="switchGallery('1')">Knock</button>
+      <button id="gallery2Btn" onclick="switchGallery('2')">Linum Lenis</button>
+      <button id="gallery3Btn" onclick="switchGallery('3')">Linum Lenis – Bedding</button>
+    </div>
+
+    <div class="carousel" id="carousel">
+      <!-- Gallery 1 -->
+      <img src="IMG_1800.JPG" class="gallery1">
+      <img src="IMG_1801.JPG" class="gallery1">
+      <img src="IMG_1802.JPG" class="gallery1">
+      <img src="IMG_1803.JPG" class="gallery1">
+      <img src="IMG_1949.JPG" class="gallery1">
+      <img src="IMG_9650.JPG" class="gallery1">
+      <img src="IMG_9651.JPG" class="gallery1">
+      <img src="IMG_9652.JPG" class="gallery1">
+      <img src="IMG_9653.JPG" class="gallery1">
+      <img src="IMG_9654.JPG" class="gallery1">
+
+      <!-- Gallery 2 -->
+      <img src="linum_1.jpg" class="gallery2">
+      <img src="linum_2.jpg" class="gallery2">
+      <img src="linum_3.jpg" class="gallery2">
+      <img src="linum_4.jpg" class="gallery2">
+      <img src="linum_5.jpg" class="gallery2">
+
+      <!-- Gallery 3 -->
+      <img src="bedding_1.jpg" class="gallery3">
+      <img src="bedding_2.jpg" class="gallery3">
+      <img src="bedding_3.jpg" class="gallery3">
+      <img src="bedding_4.jpg" class="gallery3">
+      <img src="bedding_5.jpg" class="gallery3">
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevImage()">← Ankstesnė</button>
+      <button onclick="nextImage(
