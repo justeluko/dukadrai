@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio | Du Kadrai</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; background: #111; color: white; text-align: center; }
+    .logo { max-width: 200px; margin: 20px auto; display: block; }
+    .container { max-width: 900px; margin: auto; padding: 20px; }
+    .selector button { margin: 5px; padding: 10px 20px; font-size: 16px; }
+    .selector button.active { font-weight: bold; background: #333; color: white; }
+    .carousel img { max-width: 100%; max-height: 80vh; display: none; margin: 20px 0; }
+    .nav-buttons { margin-top: 10px; }
+    .counter { margin-top: 5px; font-size: 14px; color: #aaa; }
+  </style>
+</head>
+<body>
+  <img src="logo.jpg" alt="Du Kadrai Logo" class="logo"/>
+
+  <div class="container">
+    <h2>Portfolio</h2>
+
+    <div class="selector">
+      <button id="gallery1Btn" onclick="switchGallery('1')">Knock</button>
+      <button id="gallery2Btn" onclick="switchGallery('2')">Linum Lenis</button>
+      <button id="gallery3Btn" onclick="switchGallery('3')">Linum Lenis – Bedding</button>
+    </div>
+
+    <div class="carousel" id="carousel">
+      <img src="knock_final_retry/img1.jpg" class="gallery1" />
+      <img src="linum_final_true/img1.jpg" class="gallery2" />
+      <img src="resized_bedding/img1.jpg" class="gallery3" />
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevImage()">← Ankstesnė</button>
+      <button onclick="nextImage()">Kita →</button>
+    </div>
+    <div class="counter" id="counter">1 / 1</div>
+  </div>
+
+<script defer>
+  let current = 0;
+  let currentGallery = '1';
+  let images = [];
+
+  window.addEventListener('DOMContentLoaded', () => {
+    switchGallery('1');
+  });
+
+  function showImage(index) {
+    images.forEach((img, i) => {
+      img.style.display = i === index ? "block" : "none";
+    });
+    document.getElementById("counter").textContent = (index + 1) + " / " + images.length;
+  }
+
+  function nextImage() {
+    current = (current + 1) % images.length;
+    showImage(current);
+  }
+
+  function prevImage() {
+    current = (current - 1 + images.length) % images.length;
+    showImage(current);
+  }
+
+  function switchGallery(num) {
+    currentGallery = num;
+    current = 0;
+
+    document.getElementById("gallery1Btn").classList.remove("active");
+    document.getElementById("gallery2Btn").classList.remove("active");
+    document.getElementById("gallery3Btn").classList.remove("active");
+    document.getElementById("gallery" + num + "Btn").classList.add("active");
+
+    images = Array.from(document.querySelectorAll(".gallery" + currentGallery));
+    document.querySelectorAll('.carousel img').forEach(img => img.style.display = "none");
+    showImage(current);
+  }
+</script>
+</body>
+</html>
