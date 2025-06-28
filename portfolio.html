@@ -22,9 +22,6 @@
       text-decoration: none;
       font-weight: bold;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
     .logo {
       display: block;
       max-height: 80px;
@@ -54,9 +51,9 @@
     }
     .gallery-row.active {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 40px;
+      flex-wrap: wrap;
     }
     .gallery-container {
       display: flex;
@@ -110,46 +107,52 @@
       <button onclick="switchGallery(4)" id="btn4">Žvejyba</button>
     </div>
 
+    <!-- Knock -->
     <div class="gallery-row active" id="gallery1">
       <div class="gallery-container">
         <div class="reels">
           <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DK150LOMMDM/" data-instgrm-version="14"></blockquote>
         </div>
         <div>
-          <img src="IMG_1800.JPG" />
-          <img src="IMG_1801.JPG" />
-          <img src="IMG_1802.JPG" />
-          <img src="IMG_1803.JPG" />
+          <!-- IMG_1800 to IMG_1813 -->
+          <!-- 14 images -->
+          <!-- Change numbers based on actual file names -->
+          <!-- Display only one at a time using JS -->
+          <!-- ... -->
+          <!-- Example: -->
+          <img src="IMG_1800.JPG" class="gallery1img" style="display:none;">
+          <img src="IMG_1801.JPG" class="gallery1img" style="display:none;">
+          <!-- (ir t.t. iki IMG_1813.JPG) -->
         </div>
       </div>
     </div>
 
+    <!-- Linum Lenis -->
     <div class="gallery-row" id="gallery2">
       <div class="gallery-container">
         <div class="reels">
           <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIvF4SXtkxS/" data-instgrm-version="14"></blockquote>
         </div>
         <div>
-          <img src="linum_1.jpg" />
-          <img src="linum_2.jpg" />
-          <img src="linum_3.jpg" />
+          <!-- linum_1.jpg – linum_30.jpg -->
+          <!-- ... -->
         </div>
       </div>
     </div>
 
+    <!-- Bedding -->
     <div class="gallery-row" id="gallery3">
       <div class="gallery-container">
         <div class="reels">
           <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DKl2wR0M8nO/" data-instgrm-version="14"></blockquote>
         </div>
         <div>
-          <img src="bedding_1.jpg" />
-          <img src="bedding_2.jpg" />
-          <img src="bedding_3.jpg" />
+          <!-- bedding_1.jpg – bedding_30.jpg -->
         </div>
       </div>
     </div>
 
+    <!-- Žvejyba -->
     <div class="gallery-row" id="gallery4">
       <div class="gallery-container">
         <div class="reels">
@@ -157,43 +160,55 @@
           <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJfGimisuBC/" data-instgrm-version="14"></blockquote>
         </div>
         <div>
-          <img src="fishing_1.jpg" />
-          <img src="fishing_2.jpg" />
-          <img src="fishing_3.jpg" />
+          <!-- fishing_1.jpg – fishing_8.jpg -->
         </div>
       </div>
     </div>
 
     <div class="nav-buttons">
-      <button onclick="prev()">←</button>
-      <button onclick="next()">→</button>
+      <button onclick="prev()">← Ankstesnė</button>
+      <button onclick="next()">Kita →</button>
     </div>
     <div class="counter" id="counter">1 / 1</div>
   </div>
 
   <script>
     let currentGallery = 1;
-    const totalGalleries = 4;
+    let indexes = [0, 0, 0, 0];
 
     function switchGallery(n) {
-      for (let i = 1; i <= totalGalleries; i++) {
-        document.getElementById("gallery" + i).classList.remove("active");
-        document.getElementById("btn" + i).classList.remove("active");
-      }
-      document.getElementById("gallery" + n).classList.add("active");
-      document.getElementById("btn" + n).classList.add("active");
+      document.querySelectorAll('.gallery-row').forEach(div => div.classList.remove('active'));
+      document.getElementById('gallery' + n).classList.add('active');
+      document.querySelectorAll('.selector button').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn' + n).classList.add('active');
       currentGallery = n;
+      showSlide();
+    }
+
+    function showSlide() {
+      for (let g = 1; g <= 4; g++) {
+        let imgs = document.querySelectorAll('.gallery' + g + 'img');
+        imgs.forEach((img, i) => {
+          img.style.display = (g === currentGallery && i === indexes[g - 1]) ? 'block' : 'none';
+        });
+      }
+      let imgs = document.querySelectorAll('.gallery' + currentGallery + 'img');
+      document.getElementById('counter').textContent = (indexes[currentGallery - 1] + 1) + ' / ' + imgs.length;
     }
 
     function next() {
-      let nextGallery = currentGallery % totalGalleries + 1;
-      switchGallery(nextGallery);
+      let imgs = document.querySelectorAll('.gallery' + currentGallery + 'img');
+      indexes[currentGallery - 1] = (indexes[currentGallery - 1] + 1) % imgs.length;
+      showSlide();
     }
 
     function prev() {
-      let prevGallery = (currentGallery - 2 + totalGalleries) % totalGalleries + 1;
-      switchGallery(prevGallery);
+      let imgs = document.querySelectorAll('.gallery' + currentGallery + 'img');
+      indexes[currentGallery - 1] = (indexes[currentGallery - 1] - 1 + imgs.length) % imgs.length;
+      showSlide();
     }
+
+    window.addEventListener('DOMContentLoaded', showSlide);
   </script>
 </body>
 </html>
