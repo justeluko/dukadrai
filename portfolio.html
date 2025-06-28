@@ -5,12 +5,38 @@
   <meta charset="UTF-8">
   <title>Portfolio | Du Kadrai</title>
   <style>
-    body { margin: 0; font-family: Georgia, serif; background: #fefefe; color: #444; }
-    nav { background: #f3f3f3; padding: 10px; text-align: center; border-bottom: 1px solid #ddd; }
-    nav a { color: #444; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    .logo { display: block; max-height: 80px; margin: 30px auto 10px auto; }
-    .container { max-width: 1000px; margin: auto; padding: 40px 20px; text-align: center; }
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background-color: #fcfcfc;
+      color: #444;
+    }
+    nav {
+      background-color: #f3f3f3;
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    nav a {
+      color: #444;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .logo {
+      display: block;
+      max-height: 80px;
+      margin: 30px auto 10px auto;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 20px;
+      text-align: center;
+    }
     .selector button {
       margin: 5px;
       padding: 10px 20px;
@@ -22,24 +48,59 @@
     }
     .selector button.active {
       background: #ddd;
-      font-weight: bold;
     }
-    .gallery {
+    .gallery-row {
       display: none;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
       margin-top: 30px;
     }
-    .gallery.active {
+    .gallery-row.active {
       display: flex;
     }
-    .gallery img {
-      max-width: 200px;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    .reel-embed {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+    }
+    .carousel-wrapper {
+      flex: 2;
+      text-align: center;
+    }
+    .carousel-wrapper img {
+      max-width: 100%;
+      max-height: 600px;
+      display: none;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .nav-buttons {
+      margin-top: 15px;
+    }
+    .nav-buttons button {
+      padding: 8px 16px;
+      margin: 0 5px;
+      background: #ddd;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .counter {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #888;
+    }
+    @media screen and (max-width: 768px) {
+      .gallery-row {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
+  <script async src="//www.instagram.com/embed.js"></script>
 </head>
 <body>
   <img src="logo.jpg" class="logo" alt="Du Kadrai logo">
@@ -53,31 +114,92 @@
   <div class="container">
     <h2>Mūsų darbai</h2>
     <div class="selector">
-      <button onclick="switchGallery(1)" id="b1" class="active">Knock</button>
-      <button onclick="switchGallery(2)" id="b2">Linum Lenis</button>
-      <button onclick="switchGallery(3)" id="b3">Linum Lenis – Bedding</button>
+      <button onclick="switchGallery(1)" id="btn1" class="active">Knock</button>
+      <button onclick="switchGallery(2)" id="btn2">Linum Lenis</button>
+      <button onclick="switchGallery(3)" id="btn3">Linum Lenis – Bedding</button>
     </div>
 
-    <div class="gallery active" id="g1">
-<img src="IMG_1800.JPG"><img src="IMG_1801.JPG"><img src="IMG_1802.JPG"><img src="IMG_1803.JPG"><img src="IMG_1804.JPG"><img src="IMG_1805.JPG"><img src="IMG_1806.JPG"><img src="IMG_1807.JPG"><img src="IMG_1808.JPG"><img src="IMG_1809.JPG"><img src="IMG_1810.JPG"><img src="IMG_1811.JPG"><img src="IMG_1812.JPG"><img src="IMG_1813.JPG">
+    <div class="gallery-row active" id="gallery1">
+      <div class="reel-embed">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DK150LOMMDM/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="carousel-wrapper">
+<img src="IMG_1800.JPG" class="gallery1img"><img src="IMG_1801.JPG" class="gallery1img"><img src="IMG_1802.JPG" class="gallery1img"><img src="IMG_1803.JPG" class="gallery1img"><img src="IMG_1804.JPG" class="gallery1img"><img src="IMG_1805.JPG" class="gallery1img"><img src="IMG_1806.JPG" class="gallery1img"><img src="IMG_1807.JPG" class="gallery1img"><img src="IMG_1808.JPG" class="gallery1img"><img src="IMG_1809.JPG" class="gallery1img"><img src="IMG_1810.JPG" class="gallery1img"><img src="IMG_1811.JPG" class="gallery1img"><img src="IMG_1812.JPG" class="gallery1img"><img src="IMG_1813.JPG" class="gallery1img">
+        <div class="nav-buttons">
+          <button onclick="prev()">←</button>
+          <button onclick="next()">→</button>
+        </div>
+        <div class="counter" id="counter1">1 / 1</div>
+      </div>
     </div>
-    <div class="gallery" id="g2">
-<img src="linum_1.jpg"><img src="linum_2.jpg"><img src="linum_3.jpg"><img src="linum_4.jpg"><img src="linum_5.jpg"><img src="linum_6.jpg"><img src="linum_7.jpg"><img src="linum_8.jpg"><img src="linum_9.jpg"><img src="linum_10.jpg"><img src="linum_11.jpg"><img src="linum_12.jpg"><img src="linum_13.jpg"><img src="linum_14.jpg"><img src="linum_15.jpg">
+
+    <div class="gallery-row" id="gallery2">
+      <div class="reel-embed">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIvF4SXtkxS/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="carousel-wrapper">
+<img src="linum_1.jpg" class="gallery2img"><img src="linum_2.jpg" class="gallery2img"><img src="linum_3.jpg" class="gallery2img"><img src="linum_4.jpg" class="gallery2img"><img src="linum_5.jpg" class="gallery2img"><img src="linum_6.jpg" class="gallery2img"><img src="linum_7.jpg" class="gallery2img"><img src="linum_8.jpg" class="gallery2img"><img src="linum_9.jpg" class="gallery2img"><img src="linum_10.jpg" class="gallery2img"><img src="linum_11.jpg" class="gallery2img"><img src="linum_12.jpg" class="gallery2img"><img src="linum_13.jpg" class="gallery2img"><img src="linum_14.jpg" class="gallery2img"><img src="linum_15.jpg" class="gallery2img">
+        <div class="nav-buttons">
+          <button onclick="prev()">←</button>
+          <button onclick="next()">→</button>
+        </div>
+        <div class="counter" id="counter2">1 / 1</div>
+      </div>
     </div>
-    <div class="gallery" id="g3">
-<img src="bedding_1.jpg"><img src="bedding_2.jpg"><img src="bedding_3.jpg"><img src="bedding_4.jpg"><img src="bedding_5.jpg"><img src="bedding_6.jpg"><img src="bedding_7.jpg"><img src="bedding_8.jpg"><img src="bedding_9.jpg"><img src="bedding_10.jpg"><img src="bedding_11.jpg"><img src="bedding_12.jpg"><img src="bedding_13.jpg"><img src="bedding_14.jpg"><img src="bedding_15.jpg">
+
+    <div class="gallery-row" id="gallery3">
+      <div class="reel-embed">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DKl2wR0M8nO/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="carousel-wrapper">
+<img src="bedding_1.jpg" class="gallery3img"><img src="bedding_2.jpg" class="gallery3img"><img src="bedding_3.jpg" class="gallery3img"><img src="bedding_4.jpg" class="gallery3img"><img src="bedding_5.jpg" class="gallery3img"><img src="bedding_6.jpg" class="gallery3img"><img src="bedding_7.jpg" class="gallery3img"><img src="bedding_8.jpg" class="gallery3img"><img src="bedding_9.jpg" class="gallery3img"><img src="bedding_10.jpg" class="gallery3img"><img src="bedding_11.jpg" class="gallery3img"><img src="bedding_12.jpg" class="gallery3img"><img src="bedding_13.jpg" class="gallery3img"><img src="bedding_14.jpg" class="gallery3img"><img src="bedding_15.jpg" class="gallery3img">
+        <div class="nav-buttons">
+          <button onclick="prev()">←</button>
+          <button onclick="next()">→</button>
+        </div>
+        <div class="counter" id="counter3">1 / 1</div>
+      </div>
     </div>
   </div>
 
-  <script>
-    function switchGallery(n) {
-      for (let i = 1; i <= 3; i++) {
-        document.getElementById("g"+i).classList.remove("active");
-        document.getElementById("b"+i).classList.remove("active");
-      }
-      document.getElementById("g"+n).classList.add("active");
-      document.getElementById("b"+n).classList.add("active");
+<script>
+  let currentGallery = 1;
+  let indexes = [0, 0, 0];
+
+  function switchGallery(num) {
+    document.querySelectorAll('.gallery-row').forEach(div => div.classList.remove('active'));
+    document.getElementById('gallery' + num).classList.add('active');
+    document.querySelectorAll('.selector button').forEach(btn => btn.classList.remove('active'));
+    document.getElementById('btn' + num).classList.add('active');
+    currentGallery = num;
+    showSlide();
+  }
+
+  function showSlide() {
+    for (let g = 1; g <= 3; g++) {
+      let imgs = document.querySelectorAll('.gallery' + g + 'img');
+      imgs.forEach((img, i) => {
+        img.style.display = (g === currentGallery && i === indexes[g - 1]) ? 'block' : 'none';
+      });
+      let counter = document.getElementById('counter' + g);
+      if (counter && imgs.length)
+        counter.textContent = (indexes[g - 1] + 1) + ' / ' + imgs.length;
     }
-  </script>
+  }
+
+  function next() {
+    let imgs = document.querySelectorAll('.gallery' + currentGallery + 'img');
+    indexes[currentGallery - 1] = (indexes[currentGallery - 1] + 1) % imgs.length;
+    showSlide();
+  }
+
+  function prev() {
+    let imgs = document.querySelectorAll('.gallery' + currentGallery + 'img');
+    indexes[currentGallery - 1] = (indexes[currentGallery - 1] - 1 + imgs.length) % imgs.length;
+    showSlide();
+  }
+
+  window.addEventListener('DOMContentLoaded', showSlide);
+</script>
 </body>
 </html>
