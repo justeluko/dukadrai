@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio | Du Kadrai</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: #fdfdfd;
+      color: #444;
+    }
+    nav {
+      background: #f3f3f3;
+      text-align: center;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    nav a {
+      color: #444;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .logo {
+      display: block;
+      max-height: 80px;
+      margin: 30px auto 10px auto;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .selector button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #eee;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .selector button.active {
+      background: #ddd;
+    }
+    .gallery-row {
+      display: none;
+      margin-top: 30px;
+    }
+    .gallery-row.active {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .gallery-container .reels {
+      max-width: 320px;
+    }
+    .gallery-container img {
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+    .nav-buttons {
+      margin-top: 20px;
+    }
+    .nav-buttons button {
+      padding: 8px 16px;
+      margin: 0 5px;
+      background: #ddd;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .counter {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+  <script async src="//www.instagram.com/embed.js"></script>
+</head>
+<body>
+  <img src="logo.jpg" class="logo" alt="Du Kadrai logo">
+  <nav>
+    <a href="index.html">Pradžia</a>
+    <a href="about.html">Apie mus</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="kontaktai.html">Kontaktai</a>
+  </nav>
+
+  <div class="container">
+    <h2>Mūsų darbai</h2>
+    <div class="selector">
+      <button onclick="switchGallery(1)" id="btn1" class="active">Knock</button>
+      <button onclick="switchGallery(2)" id="btn2">Linum Lenis</button>
+      <button onclick="switchGallery(3)" id="btn3">Linum Lenis – Bedding</button>
+      <button onclick="switchGallery(4)" id="btn4">Žvejyba</button>
+    </div>
+
+    
+    <div class="gallery-row" id="gallery1">
+      <div class="gallery-container">
+        <div class="reels"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DK150LOMMDM/" data-instgrm-version="14"></blockquote></div>
+        <div>
+          <img src="IMG_181.jpg" class="gallery1img" style="display:none;">
+<img src="IMG_182.jpg" class="gallery1img" style="display:none;">
+<img src="IMG_183.jpg" class="gallery1img" style="display:none;">
+<img src="IMG_184.jpg" class="gallery1img" style="display:none;">
+<img src="IMG_185.jpg" class="gallery1img" style="display:none;">
+<img src="IMG_186.jpg" class="gallery1img" style="display:none;">
+<img src="IMG_187.jpg" class="gallery1img" style="display:none;">
+<img src="IMG_188.jpg" class="gallery1img" style="display:none;">
+<img src="IMG_189.jpg" class="gallery1img" style="display:none;">
+<img src="IMG_1810.jpg" class="gallery1img" style="display:none;">
+<img src="IMG_1811.jpg" class="gallery1img" style="display:none;">
+<img src="IMG_1812.jpg" class="gallery1img" style="display:none;">
+<img src="IMG_1813.jpg" class="gallery1img" style="display:none;">
+<img src="IMG_1814.jpg" class="gallery1img" style="display:none;">
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-row" id="gallery2">
+      <div class="gallery-container">
+        <div class="reels"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIvF4SXtkxS/" data-instgrm-version="14"></blockquote></div>
+        <div>
+          <img src="linum_1.jpg" class="gallery2img" style="display:none;">
+<img src="linum_2.jpg" class="gallery2img" style="display:none;">
+<img src="linum_3.jpg" class="gallery2img" style="display:none;">
+<img src="linum_4.jpg" class="gallery2img" style="display:none;">
+<img src="linum_5.jpg" class="gallery2img" style="display:none;">
+<img src="linum_6.jpg" class="gallery2img" style="display:none;">
+<img src="linum_7.jpg" class="gallery2img" style="display:none;">
+<img src="linum_8.jpg" class="gallery2img" style="display:none;">
+<img src="linum_9.jpg" class="gallery2img" style="display:none;">
+<img src="linum_10.jpg" class="gallery2img" style="display:none;">
+<img src="linum_11.jpg" class="gallery2img" style="display:none;">
+<img src="linum_12.jpg" class="gallery2img" style="display:none;">
+<img src="linum_13.jpg" class="gallery2img" style="display:none;">
+<img src="linum_14.jpg" class="gallery2img" style="display:none;">
+<img src="linum_15.jpg" class="gallery2img" style="display:none;">
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-row" id="gallery3">
+      <div class="gallery-container">
+        <div class="reels"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DKl2wR0M8nO/" data-instgrm-version="14"></blockquote></div>
+        <div>
+          <img src="bedding_1.jpg" class="gallery3img" style="display:none;">
+<img src="bedding_2.jpg" class="gallery3img" style="display:none;">
+<img src="bedding_3.jpg" class="gallery3img" style="display:none;">
+<img src="bedding_4.jpg" class="gallery3img" style="display:none;">
+<img src="bedding_5.jpg" class="gallery3img" style="display:none;">
+<img src="bedding_6.jpg" class="gallery3img" style="display:none;">
+<img src="bedding_7.jpg" class="gallery3img" style="display:none;">
+<img src="bedding_8.jpg" class="gallery3img" style="display:none;">
+<img src="bedding_9.jpg" class="gallery3img" style="display:none;">
+<img src="bedding_10.jpg" class="gallery3img" style="display:none;">
+<img src="bedding_11.jpg" class="gallery3img" style="display:none;">
+<img src="bedding_12.jpg" class="gallery3img" style="display:none;">
+<img src="bedding_13.jpg" class="gallery3img" style="display:none;">
+<img src="bedding_14.jpg" class="gallery3img" style="display:none;">
+<img src="bedding_15.jpg" class="gallery3img" style="display:none;">
+        </div>
+      </div>
+    </div>
+    
+    <div class="gallery-row" id="gallery4">
+      <div class="gallery-container">
+        <div class="reels"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJhHNwHsmh6/" data-instgrm-version="14"></blockquote>
+         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJfGimisuBC/" data-instgrm-version="14"></blockquote></div>
+        <div>
+          <img src="fishing_1.jpg" class="gallery4img" style="display:none;">
+<img src="fishing_2.jpg" class="gallery4img" style="display:none;">
+<img src="fishing_3.jpg" class="gallery4img" style="display:none;">
+<img src="fishing_4.jpg" class="gallery4img" style="display:none;">
+<img src="fishing_5.jpg" class="gallery4img" style="display:none;">
+<img src="fishing_6.jpg" class="gallery4img" style="display:none;">
+<img src="fishing_7.jpg" class="gallery4img" style="display:none;">
+<img src="fishing_8.jpg" class="gallery4img" style="display:none;">
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prev()">←</button>
+      <button onclick="next()">→</button>
+    </div>
+    <div class="counter" id="counter">1 / 1</div>
+  </div>
+
+<script>
+  let currentGallery = 1;
+  let indexes = [0, 0, 0, 0];
+
+  function switchGallery(n) {
+    document.querySelectorAll('.gallery-row').forEach(div => div.classList.remove('active'));
+    document.getElementById('gallery' + n).classList.add('active');
+    document.querySelectorAll('.selector button').forEach(btn => btn.classList.remove('active'));
+    document.getElementById('btn' + n).classList.add('active');
+    currentGallery = n;
+    showSlide();
+  }
+
+  function showSlide() {
+    for (let g = 1; g <= 4; g++) {
+      let imgs = document.querySelectorAll('.gallery' + g + 'img');
+      imgs.forEach((img, i) => {
+        img.style.display = (g === currentGallery && i === indexes[g - 1]) ? 'block' : 'none';
+      });
+    }
+    let imgs = document.querySelectorAll('.gallery' + currentGallery + 'img');
+    document.getElementById('counter').textContent = (indexes[currentGallery - 1] + 1) + ' / ' + imgs.length;
+  }
+
+  function next() {
+    let imgs = document.querySelectorAll('.gallery' + currentGallery + 'img');
+    indexes[currentGallery - 1] = (indexes[currentGallery - 1] + 1) % imgs.length;
+    showSlide();
+  }
+
+  function prev() {
+    let imgs = document.querySelectorAll('.gallery' + currentGallery + 'img');
+    indexes[currentGallery - 1] = (indexes[currentGallery - 1] - 1 + imgs.length) % imgs.length;
+    showSlide();
+  }
+
+  window.addEventListener('DOMContentLoaded', showSlide);
+</script>
+</body>
+</html>
