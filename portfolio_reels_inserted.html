@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio | Du Kadrai</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background: #111;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .logo {
+      display: block;
+      max-height: 80px;
+      width: auto;
+      margin: 20px auto 10px auto;
+    }
+    .container {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+    .selector button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    .selector button.active {
+      background-color: #333;
+      color: white;
+    }
+    .carousel img {
+      max-width: 100%;
+      max-height: 80vh;
+      display: none;
+      margin: 20px auto;
+    }
+    .reel-embed {
+      margin: 30px auto;
+      max-width: 540px;
+      display: none;
+    }
+    .nav-buttons {
+      margin-top: 10px;
+    }
+    .counter {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+  <script async src="//www.instagram.com/embed.js"></script>
+</head>
+<body>
+  <img src="logo.jpg" alt="Du Kadrai Logo" class="logo"/>
+
+  <nav>
+    <a href="index.html">Pradžia</a>
+    <a href="about.html">Apie mus</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="kontaktai.html">Kontaktai</a>
+  </nav>
+
+  <div class="container">
+    <h2>Portfolio</h2>
+
+    <div class="selector">
+      <button id="gallery1Btn" class="active" onclick="switchGallery('1')">Knock</button>
+      <button id="gallery2Btn" onclick="switchGallery('2')">Linum Lenis</button>
+      <button id="gallery3Btn" onclick="switchGallery('3')">Linum Lenis – Bedding</button>
+    </div>
+
+    <div class="carousel" id="carousel">
+      <div class="gallery1 reel-embed">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DK150LOMMDM/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="gallery2 reel-embed">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIvF4SXtkxS/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="gallery3 reel-embed">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DKl2wR0M8nO/" data-instgrm-version="14"></blockquote>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevImage()">← Ankstesnė</button>
+      <button onclick="nextImage()">Kita →</button>
+    </div>
+    <div class="counter" id="counter">1 / 1</div>
+  </div>
+
+  <script>
+    let current = 0;
+    let currentGallery = '1';
+    const allItems = document.querySelectorAll('.carousel .gallery1, .gallery2, .gallery3');
+    let images = [];
+    const counter = document.getElementById('counter');
+
+    function showImage(index) {
+      images.forEach((el, i) => {
+        el.style.display = i === index ? "block" : "none";
+      });
+      counter.textContent = (index + 1) + " / " + images.length;
+    }
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }
+
+    function prevImage() {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    }
+
+    function switchGallery(num) {
+      currentGallery = num;
+      current = 0;
+      document.getElementById("gallery1Btn").classList.remove("active");
+      document.getElementById("gallery2Btn").classList.remove("active");
+      document.getElementById("gallery3Btn").classList.remove("active");
+      document.getElementById("gallery" + num + "Btn").classList.add("active");
+
+      images = Array.from(document.querySelectorAll(".gallery" + currentGallery));
+      allItems.forEach(el => el.style.display = "none");
+      showImage(current);
+    }
+
+    switchGallery('1');
+  </script>
+</body>
+</html>
