@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio | Du Kadrai</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background: #111;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .logo {
+      display: block;
+      max-height: 80px;
+      width: auto;
+      margin: 20px auto 10px auto;
+    }
+    .container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+    .selector button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    .selector button.active {
+      background-color: #333;
+      color: white;
+    }
+    .gallery-row {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .reel-embed {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+    }
+    .photos-right {
+      flex: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .photos-right img {
+      max-width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .gallery-row.active {
+      display: flex;
+    }
+    @media screen and (max-width: 768px) {
+      .gallery-row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+  <script async src="//www.instagram.com/embed.js"></script>
+</head>
+<body>
+  <img src="logo.jpg" alt="Du Kadrai Logo" class="logo"/>
+
+  <nav>
+    <a href="index.html">Pradžia</a>
+    <a href="about.html">Apie mus</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="kontaktai.html">Kontaktai</a>
+  </nav>
+
+  <div class="container">
+    <h2>Portfolio</h2>
+
+    <div class="selector">
+      <button onclick="switchGallery('1')" id="gallery1Btn" class="active">Knock</button>
+      <button onclick="switchGallery('2')" id="gallery2Btn">Linum Lenis</button>
+      <button onclick="switchGallery('3')" id="gallery3Btn">Linum Lenis – Bedding</button>
+    </div>
+
+    <!-- GALLERY 1 -->
+    <div class="gallery-row active" id="gallery1">
+      <div class="reel-embed">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DK150LOMMDM/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="photos-right">
+<img src="IMG_1800.JPG">
+<img src="IMG_1801.JPG">
+<img src="IMG_1802.JPG">
+<img src="IMG_1803.JPG">
+<img src="IMG_1804.JPG">
+<img src="IMG_1805.JPG">
+<img src="IMG_1806.JPG">
+<img src="IMG_1807.JPG">
+<img src="IMG_1808.JPG">
+<img src="IMG_1809.JPG">
+<img src="IMG_1810.JPG">
+<img src="IMG_1811.JPG">
+<img src="IMG_1812.JPG">
+<img src="IMG_1813.JPG">
+<img src="IMG_9650.JPG">
+<img src="IMG_9651.JPG">
+<img src="IMG_9652.JPG">
+<img src="IMG_9653.JPG">
+<img src="IMG_9654.JPG">
+<img src="IMG_9655.JPG">
+<img src="IMG_9656.JPG">
+<img src="IMG_9657.JPG">
+
+      </div>
+    </div>
+
+    <!-- GALLERY 2 -->
+    <div class="gallery-row" id="gallery2">
+      <div class="reel-embed">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIvF4SXtkxS/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="photos-right">
+<img src="linum_1.jpg">
+<img src="linum_2.jpg">
+<img src="linum_3.jpg">
+<img src="linum_4.jpg">
+<img src="linum_5.jpg">
+<img src="linum_6.jpg">
+<img src="linum_7.jpg">
+<img src="linum_8.jpg">
+<img src="linum_9.jpg">
+<img src="linum_10.jpg">
+<img src="linum_11.jpg">
+<img src="linum_12.jpg">
+<img src="linum_13.jpg">
+<img src="linum_14.jpg">
+<img src="linum_15.jpg">
+<img src="linum_16.jpg">
+<img src="linum_17.jpg">
+<img src="linum_18.jpg">
+<img src="linum_19.jpg">
+<img src="linum_20.jpg">
+<img src="linum_21.jpg">
+<img src="linum_22.jpg">
+<img src="linum_23.jpg">
+<img src="linum_24.jpg">
+<img src="linum_25.jpg">
+<img src="linum_26.jpg">
+<img src="linum_27.jpg">
+<img src="linum_28.jpg">
+<img src="linum_29.jpg">
+<img src="linum_30.jpg">
+
+      </div>
+    </div>
+
+    <!-- GALLERY 3 -->
+    <div class="gallery-row" id="gallery3">
+      <div class="reel-embed">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DKl2wR0M8nO/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="photos-right">
+<img src="bedding_1.jpg">
+<img src="bedding_2.jpg">
+<img src="bedding_3.jpg">
+<img src="bedding_4.jpg">
+<img src="bedding_5.jpg">
+<img src="bedding_6.jpg">
+<img src="bedding_7.jpg">
+<img src="bedding_8.jpg">
+<img src="bedding_9.jpg">
+<img src="bedding_10.jpg">
+<img src="bedding_11.jpg">
+<img src="bedding_12.jpg">
+<img src="bedding_13.jpg">
+<img src="bedding_14.jpg">
+<img src="bedding_15.jpg">
+<img src="bedding_16.jpg">
+<img src="bedding_17.jpg">
+<img src="bedding_18.jpg">
+<img src="bedding_19.jpg">
+<img src="bedding_20.jpg">
+<img src="bedding_21.jpg">
+<img src="bedding_22.jpg">
+<img src="bedding_23.jpg">
+<img src="bedding_24.jpg">
+<img src="bedding_25.jpg">
+<img src="bedding_26.jpg">
+<img src="bedding_27.jpg">
+<img src="bedding_28.jpg">
+<img src="bedding_29.jpg">
+<img src="bedding_30.jpg">
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function switchGallery(num) {
+      document.querySelectorAll('.gallery-row').forEach(row => row.classList.remove('active'));
+      document.querySelectorAll('.selector button').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('gallery' + num).classList.add('active');
+      document.getElementById('gallery' + num + 'Btn').classList.add('active');
+    }
+  </script>
+</body>
+</html>
