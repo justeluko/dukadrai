@@ -3,65 +3,44 @@
 <html lang="lt">
 <head>
   <meta charset="UTF-8">
-  <title>Kontaktai</title>
-  
+  <title>Kontaktai | Du Kadrai</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
-      margin: 0;
-      padding: 0;
+    body { margin: 0; font-family: Georgia, serif; background: #fcfcfc; color: #444; }
+    nav { background: #f3f3f3; padding: 10px; text-align: center; border-bottom: 1px solid #ddd; }
+    nav a { color: #444; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .logo { display: block; max-height: 80px; margin: 30px auto 10px auto; }
+    .container { max-width: 600px; margin: auto; padding: 40px 20px; text-align: center; }
+    form input, form textarea {
+      width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px;
+      font-family: inherit; font-size: 16px;
     }
-    nav {
-      background: #111;
-      padding: 10px 0;
-      text-align: center;
+    form button {
+      background: #333; color: #fff; border: none; padding: 10px 20px;
+      font-size: 16px; border-radius: 6px; cursor: pointer;
     }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .logo {
-      display: block;
-      max-height: 80px;
-      width: auto;
-      margin: 20px auto 10px auto;
-    }
-    .container {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-    h1, h2 {
-      margin-top: 10px;
-    }
-    a {
-      color: #ccc;
+    form button:hover {
+      background: #555;
     }
   </style>
-
 </head>
 <body>
-  <img src="logo.jpg" alt="Du Kadrai Logo" class="logo"/>
-  
-<nav>
-  <a href="index.html">Pradžia</a>
-  <a href="about.html">Apie mus</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="kontaktai.html">Kontaktai</a>
-</nav>
+  <img src="logo.jpg" class="logo" alt="Du Kadrai logo">
+  <nav>
+    <a href="index.html">Pradžia</a>
+    <a href="about.html">Apie mus</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="kontaktai.html">Kontaktai</a>
+  </nav>
 
   <div class="container">
-    <h2>Kontaktai</h2>
-    <p>Susisiekime:</p>
-    <ul style="list-style:none; padding:0;">
-      <li>📧 El. paštas: <a href="mailto:dukadrai@gmail.com">dukadrai@gmail.com</a></li>
-      <li>📷 Instagram: <a href="https://instagram.com/dukadrai" target="_blank">@dukadrai</a></li>
-    </ul>
+    <h2>Susisiekime</h2>
+    <form>
+      <input type="text" placeholder="Vardas" required>
+      <input type="email" placeholder="El. paštas" required>
+      <textarea rows="5" placeholder="Žinutė" required></textarea>
+      <button type="submit">Siųsti</button>
+    </form>
   </div>
 </body>
 </html>
